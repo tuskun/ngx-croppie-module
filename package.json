@@ -1,0 +1,30 @@
+{
+  "name": "ngx-croppie-module",
+  "version": "0.0.8",
+  "peerDependencies": {
+    "@angular/common": ">=5.0.0",
+    "@angular/core": ">=5.0.0",
+    "croppie": "~2.5.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json"
+  },
+  "description": "Angular 2+ module for using [Croppie](https://foliotek.github.io/Croppie/).",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuskun/ngx-croppie-module.git"
+  },
+  "keywords": [
+    "angular",
+    "croppie"
+  ],
+  "author": "tuskun",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tuskun/ngx-croppie-module/issues"
+  },
+  "homepage": "https://github.com/tuskun/ngx-croppie-module#readme",
+  "devDependencies": {
+    "ng-packagr": "^15.2.2"
+  }
+}
