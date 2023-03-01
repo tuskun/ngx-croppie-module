@@ -1,19 +1,23 @@
 import * as i0 from '@angular/core';
 import { EventEmitter, Directive, Input, Output, NgModule } from '@angular/core';
-import * as Croppie from 'croppie';
+import Croppie from 'croppie/croppie';
 import { CommonModule } from '@angular/common';
 
-/**
- * Basic directive for creating Coppie instance on `<img>` tag.
- */
 class CroppieDirective {
     constructor(elementRef) {
         this.element = elementRef.nativeElement;
         this.update = new EventEmitter();
     }
     ngAfterViewInit() {
+        this.initCroppie();
+    }
+    initCroppie() {
         this.croppieOptions.update = (data) => this.update.emit(data);
         this.croppie = new Croppie(this.element, this.croppieOptions);
+    }
+    reInit() {
+        this.croppie.destroy();
+        this.initCroppie();
     }
     ngOnDestroy() {
         if (!!this.croppie) {
@@ -64,4 +68,4 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "15.2.0", ngImpor
  */
 
 export { CroppieDirective, CroppieModule };
-//# sourceMappingURL=ngx-croppie-module.mjs.map
+//# sourceMappingURL=tuskun-ngx-croppie-module.mjs.map

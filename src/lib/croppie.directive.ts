@@ -1,9 +1,6 @@
 import { Directive, AfterViewInit, OnDestroy, Input, Output, ElementRef, EventEmitter } from '@angular/core';
-import * as Croppie from 'croppie';
+import Croppie from 'croppie/croppie';
 
-/**
- * Basic directive for creating Coppie instance on `<img>` tag.
- */
 @Directive({
   selector: 'img[croppieOptions]',
   exportAs: 'croppie'
@@ -37,7 +34,7 @@ export class CroppieDirective implements AfterViewInit, OnDestroy {
     );
   }
 
-  reInit() {
+  public reInit() {
     this.croppie.destroy();
     this.initCroppie();
   }
